@@ -21,6 +21,10 @@ import com.grupo3.androiddsa.domain.Characters;
 import com.grupo3.androiddsa.domain.MyObjects;
 import com.grupo3.androiddsa.retrofit.Api;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,6 +34,7 @@ import retrofit2.Response;
 public class PersonajesFragment extends Fragment {
 
     private List<Characters> listCharacters;
+    private List<Characters> listaOrdenada;
     private RecyclerView recyclerC;
     private AdapterCharacters adapterDatosC;
     private ProgressBar progressBarCharacter;

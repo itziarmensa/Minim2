@@ -9,15 +9,17 @@ public class Characters {
     private String characterName;
     private String characterDescription;
     private double characterCoins;
+    String avatar;
 
     public Characters() {
     }
 
-    public Characters(String characterId, String characterName, String characterDescription, double characterCoins) {
+    public Characters(String characterId, String characterName, String characterDescription, double characterCoins, String avatar) {
         this.characterId = characterId;
         this.characterName = characterName;
         this.characterDescription = characterDescription;
         this.characterCoins = characterCoins;
+        this.avatar = avatar;
     }
 
     public String getCharacterId() {
@@ -50,5 +52,13 @@ public class Characters {
 
     public void setCharacterCoins(double characterCoins) {
         this.characterCoins = characterCoins;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }

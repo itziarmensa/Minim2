@@ -19,7 +19,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface Api {
-    String URL = "http://147.83.7.205:80/dsaApp/";
+    String URL = "http://192.168.214.253:80/dsaApp/";
 
     @POST("gameManager/user/login")
     Call<Void> logInUser(@Body Credentials credentials);

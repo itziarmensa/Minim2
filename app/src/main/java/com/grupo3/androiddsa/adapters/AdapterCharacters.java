@@ -3,6 +3,7 @@ package com.grupo3.androiddsa.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.grupo3.androiddsa.R;
 import com.grupo3.androiddsa.domain.Characters;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,6 +40,7 @@ public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.Vi
         private TextView coins;
         private TextView type;
         private TextView clica;
+        private ImageView avatar;
         //Button btnComprarObjeto;
 
         public ViewHolder(@NonNull View itemView) {
@@ -47,14 +50,7 @@ public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.Vi
             coins = itemView.findViewById(R.id.coins);
             type = itemView.findViewById(R.id.typeId);
             clica = itemView.findViewById(R.id.clica);
-            /*btnComprarObjeto = itemView.findViewById(R.id.btnComprarObjeto);
-            btnComprarObjeto.setOnClickListener(new View.OnClickListener(){
-
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "Has comprado", Toast.LENGTH_LONG).show();
-                }
-            });*/
+            avatar = itemView.findViewById(R.id.imagenAvatar);
         }
 
         void bindData(final Characters character){
@@ -63,6 +59,7 @@ public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.Vi
             coins.setText("Coins: "+character.getCharacterCoins());
             type.setText("");
             clica.setText("Clica para comprar");
+            Picasso.get().load(character.getAvatar()).into(avatar);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
